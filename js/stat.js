@@ -34,6 +34,12 @@ var getMaxTime = function (time) {
   return maxElement;
 };
 
+var getRandomInSegment = function (start, end) {
+  var random = start + Math.random() * (end - start);
+
+  return Math.round(random);
+};
+
 window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + 10, CLOUD_Y + 10, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
@@ -47,8 +53,8 @@ window.renderStatistics = function (ctx, players, times) {
   var maxTime = getMaxTime(times);
 
   for (var i = 0; i < players.length; i++) {
-    var saturate = 100 * Math.random();
-    var playerTime = Math.ceil(times[i]);
+    var saturate = getRandomInSegment(1, 100);
+    var playerTime = Math.round(times[i]);
 
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], NAME_START_X + (BAR_WIDTH + BAR_GAP) * i, NAME_START_Y);
