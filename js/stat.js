@@ -17,12 +17,12 @@ var BAR_START_Y = CLOUD_Y + 235;
 var NAME_START_X = BAR_START_X;
 var NAME_START_Y = BAR_START_Y + FONT_GAP;
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxTime = function(time) {
+var getMaxTime = function (time) {
   var maxElement = time[0];
 
   for (var i = 1; i < time.length; i++) {
@@ -49,7 +49,6 @@ window.renderStatistics = function (ctx, players, times) {
   for (var i = 0; i < players.length; i++) {
     var saturate = 100 * Math.random();
     var playerTime = Math.ceil(times[i]);
-    console.log('Время игрока ' + players[i] + ' составляет ' + playerTime);
 
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], NAME_START_X + (BAR_WIDTH + BAR_GAP) * i, NAME_START_Y);
@@ -57,7 +56,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'hsl(240, '+ saturate +'%, 50%)';
+      ctx.fillStyle = 'hsl(240, ' + saturate + '%, 50%)';
     }
     ctx.fillRect(BAR_START_X + (BAR_WIDTH + BAR_GAP) * i, BAR_START_Y, BAR_WIDTH, (BAR_HEIGTH * times[i]) / maxTime);
   }
