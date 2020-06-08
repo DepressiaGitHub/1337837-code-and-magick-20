@@ -24,17 +24,16 @@ var getRandom = function (start, end) {
   return Math.round(random);
 };
 
-var getWizards = function (createWizard) {
+var getWizards = function () {
   var wizardName = WIZARD_NAMES[getRandom(0, WIZARD_NAMES.length - 1)] + ' ' + WIZARD_SURNAMES[getRandom(0, WIZARD_SURNAMES.length - 1)];
   var wizardCoatColor = WIZARD_COAT_COLOR[getRandom(0, WIZARD_COAT_COLOR.length - 1)];
   var wizardEyesColor = WIZARD_EYES_COLOR[getRandom(0, WIZARD_EYES_COLOR.length - 1)];
-  createWizard = {
+
+  return {
     name: wizardName,
     coatColor: wizardCoatColor,
     eyesColor: wizardEyesColor
   };
-
-  return createWizard;
 };
 
 for (var i = 0; i < 4; i++) {
