@@ -135,6 +135,8 @@ userNameInput.addEventListener('input', function () {
   }
 });
 
+
+// Переменные для изменения цвета при клике.
 var setupPlayer = document.querySelector('.setup-player');
 var setupPlayerCoat = setupPlayer.querySelector('.wizard-coat');
 var setupPlayerEyes = setupPlayer.querySelector('.wizard-eyes');
@@ -146,6 +148,8 @@ var fireball = WIZARD_FIREBALL_COLOR;
 var currentColor = 0;
 var inputColorList = setupPlayer.querySelectorAll('input');
 
+
+// Функция для смены цвета.
 var setNewColor = function (data, type, inputName) {
   currentColor++;
   if (currentColor > type.length - 1) {
