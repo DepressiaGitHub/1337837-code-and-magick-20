@@ -148,7 +148,7 @@ var inputColorList = setupPlayer.querySelectorAll('input');
 
 // Функция для смены цвета.
 var setNewColor = function (data, type, inputName) {
-  currentColor = (currentColor + 1) % type.length
+  currentColor = (currentColor + 1) % type.length;
   data.style.fill = type[currentColor];
   data.style.background = type[currentColor];
 
