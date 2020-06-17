@@ -155,8 +155,8 @@ var setNewColor = function (data, type, inputName) {
   for (i = 0; i < inputColorList.length; i++) {
     if (inputColorList[i].name === inputName) {
       inputColorList[i].value = type[currentColor];
+      break;
     }
-    break;
   }
 };
 
