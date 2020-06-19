@@ -58,13 +58,13 @@ var setupPlayerFireball = setupPlayer.querySelector('.setup-fireball-wrap');
 
 
 setupPlayerCoat.addEventListener('click', function () {
-  window.setNewColor(setupPlayerCoat, WIZARD_COAT_COLOR, 'coat-color');
+  window.colorize(setupPlayerCoat, WIZARD_COAT_COLOR, 'coat-color');
 });
 
 setupPlayerEyes.addEventListener('click', function () {
-  window.setNewColor(setupPlayerEyes, WIZARD_EYES_COLOR, 'eyes-color');
+  window.colorize(setupPlayerEyes, WIZARD_EYES_COLOR, 'eyes-color');
 });
 
 setupPlayerFireball.addEventListener('click', function () {
-  window.setNewColor(setupPlayerFireball, WIZARD_FIREBALL_COLOR, 'fireball-color');
+  window.colorize(setupPlayerFireball, WIZARD_FIREBALL_COLOR, 'fireball-color');
 });
