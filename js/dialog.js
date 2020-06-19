@@ -1,6 +1,6 @@
 'use strict';
 
-(function() {
+(function () {
   var userDialog = document.querySelector('.setup');
   var buttonOpenSetup = document.querySelector('.setup-open');
   var buttonCloseSetup = document.querySelector('.setup-close');

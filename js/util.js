@@ -1,6 +1,6 @@
 'use strict';
 
-window.util = (function() {
+window.util = (function () {
 
   return {
     isEscEvent: function (evt, action) {

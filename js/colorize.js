@@ -1,6 +1,6 @@
 'use strict';
 
-(function() {
+(function () {
   var setupPlayer = document.querySelector('.setup-player');
 
   var currentColor = 0;
@@ -14,7 +14,7 @@
       data.style.fill = type[currentColor];
     }
 
-    for (i = 0; i < inputColorList.length; i++) {
+    for (var i = 0; i < inputColorList.length; i++) {
       if (inputColorList[i].name === inputName) {
         inputColorList[i].value = type[currentColor];
         break;

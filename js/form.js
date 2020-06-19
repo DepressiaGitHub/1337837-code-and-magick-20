@@ -1,6 +1,6 @@
 'use strict';
 
-(function() {
+(function () {
   var MIN_NAME_LENGTH = 2;
   var MAX_NAME_LENGTH = 25;
   var userNameInput = document.querySelector('.setup-user-name');
