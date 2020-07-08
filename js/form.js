@@ -33,10 +33,14 @@
   // Отправка формы и скрытия окна.
   var form = userDialog.querySelector('.setup-wizard-form');
 
+  var successForm = function () {
+    userDialog.classList.add('hidden');
+    var alert = document.getElementById('error-block');
+    alert.remove();
+  };
+
   var submitHandler = function (evt) {
-    window.backend.save(new FormData(form), function () {
-      userDialog.classList.add('hidden');
-    });
+    window.backend.save(new FormData(form), successForm, window.util.errorMessage);
     evt.preventDefault();
   };
 
