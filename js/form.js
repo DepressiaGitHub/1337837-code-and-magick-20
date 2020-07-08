@@ -4,6 +4,7 @@
   var MIN_NAME_LENGTH = 2;
   var MAX_NAME_LENGTH = 25;
   var userNameInput = document.querySelector('.setup-user-name');
+  var userDialog = document.querySelector('.setup');
 
   userNameInput.addEventListener('invalid', function () {
     if (userNameInput.validity.tooShort) {
@@ -28,4 +29,20 @@
       userNameInput.setCustomValidity('');
     }
   });
+
+  // Отправка формы и скрытия окна.
+  var form = userDialog.querySelector('.setup-wizard-form');
+
+  var successForm = function () {
+    userDialog.classList.add('hidden');
+    var alert = document.getElementById('error-block');
+    alert.remove();
+  };
+
+  var submitHandler = function (evt) {
+    window.backend.save(new FormData(form), successForm, window.util.errorMessage);
+    evt.preventDefault();
+  };
+
+  form.addEventListener('submit', submitHandler);
 })();
