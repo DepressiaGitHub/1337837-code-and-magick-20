@@ -36,7 +36,9 @@
   var successForm = function () {
     userDialog.classList.add('hidden');
     var alert = document.getElementById('error-block');
-    alert.remove();
+    if (alert) {
+      alert.remove();
+    }
   };
 
   var submitHandler = function (evt) {

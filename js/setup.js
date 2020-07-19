@@ -67,20 +67,15 @@
   };
 
   // Изменение цвета при клике.
-  var setupPlayer = document.querySelector('.setup-player');
-  var setupPlayerCoat = setupPlayer.querySelector('.wizard-coat');
-  var setupPlayerEyes = setupPlayer.querySelector('.wizard-eyes');
-  var setupPlayerFireball = setupPlayer.querySelector('.setup-fireball-wrap');
-
-  window.wizard.onCoatChange = function (color) {
+  window.wizard.onCoatChange = window.debounce(function (color) {
     coatColor = color;
     updateWizards();
-  };
+  });
 
-  window.wizard.onEyesChange = function (color) {
+  window.wizard.onEyesChange = window.debounce(function (color) {
     eyesColor = color;
     updateWizards();
-  };
+  });
 
   // Успешно загружаем магов по данным с сервера.
   var successHandler = function (data) {
