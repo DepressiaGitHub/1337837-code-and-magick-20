@@ -7,31 +7,6 @@
     .content
     .querySelector('.setup-similar-item');
 
-  var WIZARD_COAT_COLOR = [
-    'rgb(101, 137, 164)',
-    'rgb(241, 43, 107)',
-    'rgb(146, 100, 161)',
-    'rgb(56, 159, 117)',
-    'rgb(215, 210, 55)',
-    'rgb(0, 0, 0)'
-  ];
-
-  var WIZARD_EYES_COLOR = [
-    'black',
-    'red',
-    'blue',
-    'yellow',
-    'green'
-  ];
-
-  var WIZARD_FIREBALL_COLOR = [
-    '#ee4830',
-    '#30a8ee',
-    '#5ce6c0',
-    '#e848d5',
-    '#e6e848'
-  ];
-
   var wizards = [];
   var coatColor = 'rgb(101, 137, 164)';
   var eyesColor = 'black';
@@ -97,21 +72,15 @@
   var setupPlayerEyes = setupPlayer.querySelector('.wizard-eyes');
   var setupPlayerFireball = setupPlayer.querySelector('.setup-fireball-wrap');
 
-  setupPlayerCoat.addEventListener('click', function () {
-    window.colorize(setupPlayerCoat, WIZARD_COAT_COLOR, 'coat-color');
-    coatColor = setupPlayerCoat.style.fill;
+  window.wizard.onCoatChange = function (color) {
+    coatColor = color;
     updateWizards();
-  });
+  };
 
-  setupPlayerEyes.addEventListener('click', function () {
-    window.colorize(setupPlayerEyes, WIZARD_EYES_COLOR, 'eyes-color');
-    eyesColor = setupPlayerEyes.style.fill;
+  window.wizard.onEyesChange = function (color) {
+    eyesColor = color;
     updateWizards();
-  });
-
-  setupPlayerFireball.addEventListener('click', function () {
-    window.colorize(setupPlayerFireball, WIZARD_FIREBALL_COLOR, 'fireball-color');
-  });
+  };
 
   // Успешно загружаем магов по данным с сервера.
   var successHandler = function (data) {
