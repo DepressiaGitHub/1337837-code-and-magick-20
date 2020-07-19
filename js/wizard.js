@@ -27,8 +27,8 @@
   ];
 
   var wizard = {
-    onEyesChange: function (color) {},
-    onCoatChange: function (color) {}
+    onEyesChange: function () {},
+    onCoatChange: function () {}
   };
 
   var setupPlayer = document.querySelector('.setup-player');
@@ -52,5 +52,6 @@
     window.colorize(setupPlayerFireball, WIZARD_FIREBALL_COLOR, 'fireball-color');
   });
 
-  return window.wizard = wizard;
+  window.wizard = wizard;
+  return window.wizard;
 })();
